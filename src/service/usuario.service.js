@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Usuarios = require("../model/usuario.model");
 
 const find = () => Usuarios.find();
