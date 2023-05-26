@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Usuario",
+    "dateExported": "2023-05-16T01:29:56.449Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b6c28203-bcbc-41cb-91b0-0141d51e772b",
+            "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
+            "containerId": "",
+            "name": "Find",
+            "url": "http://localhost:3000/usuarios/find",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-16T00:49:22.013Z",
+            "modified": "2023-05-16T00:49:22.013Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b36c6446-9073-4ec8-b28e-f76da7a489a3",
+            "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
+            "containerId": "",
+            "name": "Find by id",
+            "url": "http://localhost:3000/usuarios/find/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-05-16T00:49:42.608Z",
+            "modified": "2023-05-16T00:49:42.608Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "64e49e6e-12c5-4789-8d84-aa3a4537771b",
+            "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
+            "containerId": "",
+            "name": "Create",
+            "url": "http://localhost:3000/usuarios/create",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-05-16T00:51:37.328Z",
+            "modified": "2023-05-16T00:51:50.603Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"id\": 4,\n\t\"nome\": \"Usuario 4\",\n\t\"email\": \"usuario4@email.com\",\n\t\"senha\": \"usuario147\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "662966cc-f7cd-4076-b50c-81097be41fc2",
+            "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
+            "containerId": "",
+            "name": "Update",
+            "url": "http://localhost:3000/usuarios/update/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-05-16T00:53:00.335Z",
+            "modified": "2023-05-16T01:01:12.065Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\"id\": 1,\n\t\"nome\": \"Usuario alteração\",\n\t\"email\": \"usuario@alterar.com\",\n\t\"senha\": \"altera789\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bfe2decc-52b5-4ade-8ba4-37c8e2cba53c",
+            "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
+            "containerId": "",
+            "name": "Delete",
+            "url": "http://localhost:3000/usuarios/delete/4",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-05-16T00:59:18.053Z",
+            "modified": "2023-05-16T01:01:53.524Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
