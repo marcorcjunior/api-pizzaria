@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Usuario",
-    "dateExported": "2023-05-16T01:29:56.449Z",
+    "dateExported": "2023-05-26T01:39:37.293Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,13 +10,17 @@
             "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
             "containerId": "",
             "name": "Find",
-            "url": "http://localhost:3000/usuarios/find",
+            "url": "{{basePath}}:{{port}}/usuarios/find",
             "method": "GET",
             "sortNum": 10000,
             "created": "2023-05-16T00:49:22.013Z",
-            "modified": "2023-05-16T00:49:22.013Z",
+            "modified": "2023-05-25T15:10:28.540Z",
             "headers": [],
             "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
             "tests": []
         },
         {
@@ -24,11 +28,11 @@
             "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
             "containerId": "",
             "name": "Find by id",
-            "url": "http://localhost:3000/usuarios/find/1",
+            "url": "{{basePath}}:{{port}}/usuarios/find/646503a1fb038a86ed08e88d",
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-05-16T00:49:42.608Z",
-            "modified": "2023-05-16T00:49:42.608Z",
+            "modified": "2023-05-25T15:13:54.161Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -38,16 +42,16 @@
             "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
             "containerId": "",
             "name": "Create",
-            "url": "http://localhost:3000/usuarios/create",
+            "url": "{{basePath}}:{{port}}/usuarios/create",
             "method": "POST",
             "sortNum": 30000,
             "created": "2023-05-16T00:51:37.328Z",
-            "modified": "2023-05-16T00:51:50.603Z",
+            "modified": "2023-05-25T15:14:00.524Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n\t\"id\": 4,\n\t\"nome\": \"Usuario 4\",\n\t\"email\": \"usuario4@email.com\",\n\t\"senha\": \"usuario147\"\n}",
+                "raw": "{\n\t\"nome\": \"Usuario 5\",\n\t\"email\": \"usuario6@email.com\",\n\t\"senha\": \"usuario852\"\n}",
                 "form": []
             },
             "tests": []
@@ -57,16 +61,16 @@
             "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
             "containerId": "",
             "name": "Update",
-            "url": "http://localhost:3000/usuarios/update/1",
+            "url": "{{basePath}}:{{port}}/usuarios/update/6465315bdc2e80fde01ba298",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2023-05-16T00:53:00.335Z",
-            "modified": "2023-05-16T01:01:12.065Z",
+            "modified": "2023-05-25T15:14:08.549Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n\t\"id\": 1,\n\t\"nome\": \"Usuario alteração\",\n\t\"email\": \"usuario@alterar.com\",\n\t\"senha\": \"altera789\"\n}",
+                "raw": "{\n\t\"nome\": \"Usuario alteração 5\",\n\t\"email\": \"usuario21@alterar.com\",\n\t\"senha\": \"altera789\"\n}",
                 "form": []
             },
             "tests": []
@@ -76,11 +80,11 @@
             "colId": "69a71133-6729-4b22-b877-6a7e7e305189",
             "containerId": "",
             "name": "Delete",
-            "url": "http://localhost:3000/usuarios/delete/4",
+            "url": "{{basePath}}:{{port}}/usuarios/delete/6465315bdc2e80fde01ba298",
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2023-05-16T00:59:18.053Z",
-            "modified": "2023-05-16T01:01:53.524Z",
+            "modified": "2023-05-25T15:14:12.385Z",
             "headers": [],
             "params": [],
             "tests": []
