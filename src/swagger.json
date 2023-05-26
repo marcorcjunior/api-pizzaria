@@ -13,26 +13,143 @@
         }
     ],
     "paths": {
+        "/auth/login": {
+            "post": {
+                "summary": "Gerar token de usuario",
+                "description": "Gerar token de usuario",
+                "tags": ["Login"],
+                "re": {},
+                "responses": {
+                    "401": {
+                        "description": "Não autorizado!"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor!"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Usuario"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
        "/usuarios/find": {
-        "get": {
-            "summary": "Lista de usuarios",
-            "description": "Lista de todos os usuarios",
-            "tags": ["Usuarios"],
-            "responses": {
-                "401": {
-                    "description": "Não autorizado!"
+            "get": {
+                "summary": "Lista de usuarios",
+                "description": "Lista de todos os usuarios",
+                "tags": ["Usuarios"],
+                "security": {
+                    "bearerAuth": []
                 },
-                "500": {
-                    "description": "Erro interno do servidor!"
-                },
-                "200": {
-                    "description": "OK",
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "items": {
-                                    "$ref": "#/components/schemas/Usuario"
+                "responses": {
+                    "401": {
+                        "description": "Não autorizado!"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor!"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Usuario"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/clientes/find": {
+            "get": {
+                "summary": "Lista de clientes",
+                "description": "Lista de todos os clientes",
+                "tags": ["Clientes"],
+                "responses": {
+                    "401": {
+                        "description": "Não autorizado!"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor!"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Cliente"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/produtos/find": {
+            "get": {
+                "summary": "Lista de produtos",
+                "description": "Lista de todos os produtos",
+                "tags": ["Produtos"],
+                "responses": {
+                    "401": {
+                        "description": "Não autorizado!"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor!"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Produto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/pedidos/find": {
+            "get": {
+                "summary": "Lista de pedidos",
+                "description": "Lista de todos os pedidos",
+                "tags": ["Pedidos"],
+                "responses": {
+                    "401": {
+                        "description": "Não autorizado!"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor!"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pedido"
+                                    }
                                 }
                             }
                         }
@@ -40,9 +157,15 @@
                 }
             }
         }
-       } 
     },
     "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
         "schemas": {
             "Usuario": {
                 "type": "object",
@@ -58,6 +181,54 @@
                     },
                     "senha": {
                         "type": "string"
+                    }
+                }
+            },
+            "Cliente": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "nome": {
+                        "type": "string"
+                    },
+                    "telefone": {
+                        "type": "string"
+                    },
+                    "enderecos": {
+                        "type": "Array<object>"
+                    }
+                }
+            },
+            "Produto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "nome": {
+                        "type": "string"
+                    },
+                    "descricao": {
+                        "type": "string"
+                    },
+                    "preco": {
+                        "type": "number"
+                    }
+                }
+            },
+            "Pedido": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "clienteId": {
+                        "type": "integer"
+                    },
+                    "items": {
+                        "type": "Array<object>"
                     }
                 }
             }
