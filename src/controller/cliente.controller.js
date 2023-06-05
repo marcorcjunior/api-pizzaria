@@ -44,10 +44,6 @@ const validaBody = (body) => {
         return { message: "E-mail não foi informado!" };
     }
 
-    if (body.senha == null) {
-        return { message: "Senha não foi informada!" };
-    }
-
     return null;
 }
 
